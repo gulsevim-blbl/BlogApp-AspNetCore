@@ -44,6 +44,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                             Content = "Asp.net core dersleri",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
+                            Image = "1.jpg",
                             UserId = 1
                         },
                          new Post
@@ -52,6 +53,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                             Content = "React.js dersleri",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-1),
+                            Image = "2.jpg",
                             UserId = 1
                         },
                          new Post
@@ -60,6 +62,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                             Content = "Node.js dersleri",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-5),
+                             Image = "3.jpg",
                             UserId = 2
                         }
                     
