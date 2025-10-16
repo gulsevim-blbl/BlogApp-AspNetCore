@@ -152,3 +152,7 @@ C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\refint\Bl
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.pdb
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.genruntimeconfig.cache
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\ref\BlogApp-AspNetCore.dll
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cache
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cs

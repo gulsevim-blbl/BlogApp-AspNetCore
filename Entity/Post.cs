@@ -5,6 +5,7 @@ namespace BlogApp_AspNetCore.Entity
         public int PostId { get; set; } //primary key
         public string? Title { get; set; } 
         public string? Content { get; set; } 
+        public string? Image { get; set; }
 
         public DateTime PublishedOn { get; set; } 
         public bool IsActive { get; set; } //post yayında mı değil mi
