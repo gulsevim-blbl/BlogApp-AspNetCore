@@ -21,6 +21,8 @@ builder.Services.AddScoped<IPostRepostory, EfPostRepostory>();//yani  sanal vers
 
 var app = builder.Build();
 
+app.UseStaticFiles();
+
 SeedData.TestVerileriniDoldur(app);
 
 

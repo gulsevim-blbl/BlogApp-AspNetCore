@@ -156,3 +156,5 @@ C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\MySqlConn
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cache
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cs
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\libman.json
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.staticwebassets.runtime.json
