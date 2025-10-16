@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kZmUKkXBrmWvFseVCAwrleQ3T6On5fjx18up37wHvmM=",
+  "Source": "BlogApp-AspNetCore",
+  "BasePath": "_content/BlogApp-AspNetCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
