@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kub1AhPn8KZERF/2Bo3CWqu1Lkta5vMOymGma8GP9eA=",
+  "Hash": "yGKdbRy3RPuGFMsut8ZmYlc8iC1dLk9YL+d5Znw8C9g=",
   "Source": "BlogApp-AspNetCore",
   "BasePath": "_content/BlogApp-AspNetCore",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\css\\style.css",
+      "SourceId": "BlogApp-AspNetCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\",
+      "BasePath": "_content/BlogApp-AspNetCore",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
     {
       "Identity": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\img\\1.jpg",
       "SourceId": "BlogApp-AspNetCore",
