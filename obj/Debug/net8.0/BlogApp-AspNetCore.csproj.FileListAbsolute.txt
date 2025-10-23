@@ -1,5 +1,7 @@
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\appsettings.json
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\libman.json
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.staticwebassets.runtime.json
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.exe
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.deps.json
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.runtimeconfig.json
@@ -31,6 +33,8 @@ C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Microsoft
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -137,6 +141,8 @@ C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-A
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.AssemblyInfo.cs
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.csproj.CoreCompileInputs.cache
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cache
+C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cs
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.sourcelink.json
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\staticwebassets.development.json
@@ -152,9 +158,3 @@ C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\refint\Bl
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.pdb
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.genruntimeconfig.cache
 C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\ref\BlogApp-AspNetCore.dll
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\MySqlConnector.dll
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cache
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\obj\Debug\net8.0\BlogApp-AspNetCore.RazorAssemblyInfo.cs
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\libman.json
-C:\Users\gulse\OneDrive\Masaüstü\BlogApp-AspNetCore\bin\Debug\net8.0\BlogApp-AspNetCore.staticwebassets.runtime.json

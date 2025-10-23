@@ -17,8 +17,8 @@ builder.Services.AddDbContext<BlogContext>(options =>
     options.UseMySql(connectionString, version);
 });
 
-builder.Services.AddScoped<IPostRepostory, EfPostRepostory>();//yani  sanal versiyonunu verdiğim zaman sanala karşılık gerçek versiyonu bana gönder diyorum. AddScoped diyorum çünkü her istek için yeni bir instance oluşturulsun istiyorum.
-builder.Services.AddScoped<ITagRepostory, EfTagRepostory>();
+builder.Services.AddScoped<IPostRepository, EfPostRepository>();//yani  sanal versiyonunu verdiğim zaman sanala karşılık gerçek versiyonu bana gönder diyorum. AddScoped diyorum çünkü her istek için yeni bir instance oluşturulsun istiyorum.
+builder.Services.AddScoped<ITagRepository, EfTagRepository>();
 
 var app = builder.Build();
 

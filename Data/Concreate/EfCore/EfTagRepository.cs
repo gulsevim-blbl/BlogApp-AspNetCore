@@ -1,24 +1,25 @@
-//BU interface'i implemente edecek olan bir concrete class yazacağız. EfPostRepository
+using System.Linq;
 using BlogApp_AspNetCore.Data.Abstract;
 using BlogApp_AspNetCore.Data.Concreate.EfCore;
 using BlogApp_AspNetCore.Entity;
 
 namespace BlogApp_AspNetCore.Data.Concreate
 {
-    public class EfPostRepostory : IPostRepostory
+    public class EfTagRepository : ITagRepository
     {
         private readonly BlogContext _context;
-        public EfPostRepostory(BlogContext context)
+
+        public EfTagRepository(BlogContext context)
         {
             _context = context;
         }
-        public IQueryable<Post> Posts => _context.Posts;
 
-        public void CreatePost(Post post)
+        public IQueryable<Tag> Tags => _context.Tags;
+
+        public void CreateTag(Tag tag)
         {
-            _context.Posts.Add(post);
+            _context.Tags.Add(tag);
             _context.SaveChanges();
         }
     }
-    
 }

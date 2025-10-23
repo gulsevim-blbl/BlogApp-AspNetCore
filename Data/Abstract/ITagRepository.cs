@@ -3,7 +3,7 @@ using BlogApp_AspNetCore.Entity;
 
 namespace BlogApp_AspNetCore.Data.Abstract
 {
-    public interface ITagRepostory
+    public interface ITagRepository 
     {
         IQueryable<Tag> Tags { get; } 
 

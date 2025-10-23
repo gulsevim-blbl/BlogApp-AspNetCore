@@ -8,12 +8,10 @@ namespace BlogApp_AspNetCore.Controllers
     public class PostsController :Controller
     {
         //nesne üretiliyor burada
-        private  IPostRepostory _postRepository; //interface türünde bir nesne tanımladım
-        private  ITagRepostory _tagRepository;
-        public PostsController(IPostRepostory postRepository, ITagRepostory tagRepository) 
+        private  IPostRepository _postRepository; //interface türünde bir nesne tanımladım
+        public PostsController(IPostRepository postRepository) 
         {
             _postRepository = postRepository;
-            _tagRepository = tagRepository;
         }
 
 
@@ -23,7 +21,7 @@ namespace BlogApp_AspNetCore.Controllers
                 new PostViewModel
                 {
                     Posts = _postRepository.Posts.ToList(),
-                    Tags = _tagRepository.Tags.ToList()
+                   
                 }
             ); //veritabanindaki postlari listeleyip view e gonderiyorum
         }

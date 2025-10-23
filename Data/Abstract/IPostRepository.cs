@@ -3,7 +3,7 @@ using BlogApp_AspNetCore.Entity;
 
 namespace BlogApp_AspNetCore.Data.Abstract
 {
-    public interface IPostRepostory
+    public interface IPostRepository 
     {
         IQueryable<Post> Posts { get; } // peki neden IQueryable kullandık? Çünkü veritabanından verileri çekerken, filtreleme, sıralama gibi işlemleri daha verimli yapabilmek için IQueryable kullanmak daha avantajlıdır. IQueryable, LINQ sorgularını veritabanı seviyesinde çalıştırarak performansı artırır.
         //Ben context üzerinden bütün post'ları aldığım zaman ekstra filtrelemeye devam edebileceğim.
