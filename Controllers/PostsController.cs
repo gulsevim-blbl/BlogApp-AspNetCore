@@ -44,7 +44,8 @@ namespace BlogApp_AspNetCore.Controllers
                             .FirstOrDefaultAsync(p => p.Url == url)); //dışarıdan id alıp o id ye sahip postu getiriyoruz
         }
         //Yorum Ekleme İşlemi action metodu
-        public IActionResult AddComment(int PostId, string UserName, string Text, string Url)
+        [HttpPost]
+        public JsonResult AddComment(int PostId, string UserName, string Text)
         {
             var entity = new Comment
             {
@@ -59,7 +60,15 @@ namespace BlogApp_AspNetCore.Controllers
             };
             _commentRepository.CreateComment(entity);
             // return Redirect("/posts/details/" + Url);
-            return RedirectToRoute("post_details", new { url = Url }); //ikinci yöntem olarak da bu şekilde yönlendirme sağlayabiliriz.
+            // return RedirectToRoute("post_details", new { url = Url }); //ikinci yöntem olarak da bu şekilde yönlendirme sağlayabiliriz.
+
+            return Json(new
+            {
+                UserName,
+                Text,
+                entity.PublishedOn,
+                entity.User.Image
+            });
         }
     }
 }
