@@ -17,6 +17,22 @@
       "PackagePath": "staticwebassets\\img\\3.jpg"
     },
     {
+      "Id": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\img\\p1.jpg",
+      "PackagePath": "staticwebassets\\img\\p1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\img\\p2.jpg",
+      "PackagePath": "staticwebassets\\img\\p2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\img\\p3.jpg",
+      "PackagePath": "staticwebassets\\img\\p3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\img\\p4.jpg",
+      "PackagePath": "staticwebassets\\img\\p4.jpg"
+    },
+    {
       "Id": "C:\\Users\\gulse\\OneDrive\\Masaüstü\\BlogApp-AspNetCore\\wwwroot\\lib\\bootstrap-icons\\bootstrap-icons.svg",
       "PackagePath": "staticwebassets\\lib\\bootstrap-icons\\bootstrap-icons.svg"
     },

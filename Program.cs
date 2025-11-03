@@ -27,7 +27,25 @@ app.UseStaticFiles();
 SeedData.TestVerileriniDoldur(app);
 
 
-app.MapDefaultControllerRoute();
+//Localhost://posts/react-dersleri
+//localhost://posts/php dersleri
 
+app.MapControllerRoute(
+    name: "post_details",
+    pattern: "posts/{url}",
+    defaults: new { controller = "Posts", action = "Details" }
+);
+//localhost://posts/tag/php dersleri
+
+app.MapControllerRoute(
+    name: "posts_by_tag",
+    pattern: "posts/tag/{tag}",
+    defaults: new { controller = "Posts", action = "Index" }
+);
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();

@@ -19,19 +19,19 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                 if (!context.Tags.Any())
                 {
                     context.Tags.AddRange(
-                        new Entity.Tag { Text = "Web Programlama" },
-                        new Entity.Tag { Text = "Backend" },
-                        new Entity.Tag { Text = "Frontend" },
-                        new Entity.Tag { Text = "php" }
+                        new Entity.Tag { Text = "Web Programlama" , Url = "web-programlama", Color = TagColors.warning },
+                        new Entity.Tag { Text = "Backend", Url = "backend" , Color = TagColors.danger },
+                        new Entity.Tag { Text = "Frontend", Url= "frontend" , Color = TagColors.success},
+                        new Entity.Tag { Text = "php", Url= "php" , Color = TagColors.primary }
                     );
                     context.SaveChanges();
                 }
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new User { UserName = "Gül Sevim Bülbül" },
-                        new User { UserName = "Selma Dikici" },
-                        new User { UserName = "Ahmet Yilmaz" }
+                        new User { UserName = "Gül Sevim Bülbül", Image = "p1.jpg" },
+                        new User { UserName = "Selma Dikici" , Image = "p3.jpg" },
+                        new User { UserName = "Ahmet Yilmaz" , Image = "p4.jpg" }
                     );
                     context.SaveChanges();
                 }
@@ -42,30 +42,106 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                         {
                             Title = "Asp.Net.Core",
                             Content = "Asp.net core dersleri",
+                            Url = "asp-net-core",
                             IsActive = true,
                             PublishedOn = DateTime.Now.AddDays(-10),
+                            Tags = context.Tags.Take(3).ToList(),
                             Image = "1.jpg",
-                            UserId = 1
+                            UserId = 1,
+                            Comments = new List<Comment>
+                            {
+                                new Comment
+                                {
+                                    Text = "Harika bir ders olmuş, teşekkürler!",
+                                    PublishedOn = new DateTime(),
+                                    UserId= 1 
+                                },
+                                new Comment
+                                {
+                                    Text = "Çok faydalı bilgiler edindim.",
+                                    PublishedOn = new DateTime(),
+                                    UserId= 3
+                                }
+                            }
                         },
                          new Post
+                         {
+                             Title = "React.js",
+                             Content = "React.js dersleri",
+                             Url = "react-js",
+                             IsActive = true,
+                             PublishedOn = DateTime.Now.AddDays(-1),
+                             Tags = context.Tags.Take(2).ToList(),
+                             Image = "2.jpg",
+                             UserId = 1
+                         },
+                         new Post
+                         {
+                             Title = "Node.js",
+                             Content = "Node.js dersleri",
+                             Url = "node-js",
+                             IsActive = true,
+                             PublishedOn = DateTime.Now.AddDays(-5),
+                             Tags = context.Tags.Take(2).ToList(),
+                             Image = "3.jpg",
+                             UserId = 2
+                         },
+                        new Post
                         {
-                            Title = "React.js",
-                            Content = "React.js dersleri",
+                            Title = "PHP",
+                            Content = "PHP dersleri",
+                            Url = "php",
                             IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-1),
+                            PublishedOn = DateTime.Now.AddDays(-20),
+                            Tags = context.Tags.Take(1).ToList(),
+                            Image = "1.jpg",
+                            UserId = 3
+                        },
+                        new Post
+                        {
+                            Title = "Kubernetes",
+                            Content = "Kubernetes dersleri",
+                            Url = "Kubernetes",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-15),
+                            Tags = context.Tags.Take(3).ToList(),
+                            Image = "2.jpg",
+                            UserId = 3
+                        },
+                        new Post
+                        {
+                            Title = "Vue.js",
+                            Content = "Vue.js dersleri",
+                            Url = "vue-js",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-8),
+                            Tags = context.Tags.Take(3).ToList(),
+                            Image = "3.jpg",
+                            UserId = 2
+                        },
+                         new Post
+                         {
+                             Title = "Docker",
+                             Content = "Docker dersleri",
+                             Url = "docker",
+                             IsActive = true,
+                             PublishedOn = DateTime.Now.AddDays(-8),
+                             Tags = context.Tags.Take(2).ToList(),
+                             Image = "3.jpg",
+                             UserId = 2
+                         },
+                        new Post
+                        {
+                            Title = "Angular",
+                            Content = "Angular dersleri",
+                            Url = "angular",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-3),
+                            Tags = context.Tags.Take(1).ToList(),
                             Image = "2.jpg",
                             UserId = 1
-                        },
-                         new Post
-                        {
-                            Title = "Node.js",
-                            Content = "Node.js dersleri",
-                            IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-5),
-                             Image = "3.jpg",
-                            UserId = 2
                         }
-                    
+
                     );
                     context.SaveChanges();
                 }

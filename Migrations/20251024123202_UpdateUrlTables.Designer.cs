@@ -4,6 +4,7 @@ using BlogApp_AspNetCore.Data.Concreate.EfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogApp_AspNetCore.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20251024123202_UpdateUrlTables")]
+    partial class UpdateUrlTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,9 +97,6 @@ namespace BlogApp_AspNetCore.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TagId"));
-
-                    b.Property<int?>("Color")
-                        .HasColumnType("int");
 
                     b.Property<string>("Text")
                         .HasColumnType("longtext");
