@@ -19,6 +19,8 @@ builder.Services.AddDbContext<BlogContext>(options =>
 
 builder.Services.AddScoped<IPostRepository, EfPostRepository>();//yani  sanal versiyonunu verdiğim zaman sanala karşılık gerçek versiyonu bana gönder diyorum. AddScoped diyorum çünkü her istek için yeni bir instance oluşturulsun istiyorum.
 builder.Services.AddScoped<ITagRepository, EfTagRepository>();
+builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
+
 
 var app = builder.Build();
 
@@ -32,7 +34,7 @@ SeedData.TestVerileriniDoldur(app);
 
 app.MapControllerRoute(
     name: "post_details",
-    pattern: "posts/{url}",
+    pattern: "posts/details/{url}",
     defaults: new { controller = "Posts", action = "Details" }
 );
 //localhost://posts/tag/php dersleri

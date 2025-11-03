@@ -53,13 +53,13 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                                 new Comment
                                 {
                                     Text = "Harika bir ders olmuş, teşekkürler!",
-                                    PublishedOn = new DateTime(),
+                                    PublishedOn = DateTime.Now.AddDays(-10),
                                     UserId= 1 
                                 },
                                 new Comment
                                 {
                                     Text = "Çok faydalı bilgiler edindim.",
-                                    PublishedOn = new DateTime(),
+                                    PublishedOn = DateTime.Now.AddDays(-2),
                                     UserId= 3
                                 }
                             }
