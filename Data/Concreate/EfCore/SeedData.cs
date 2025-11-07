@@ -29,9 +29,10 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new User { UserName = "Gül Sevim Bülbül", Image = "p1.jpg" },
-                        new User { UserName = "Selma Dikici" , Image = "p3.jpg" },
-                        new User { UserName = "Ahmet Yilmaz" , Image = "p4.jpg" }
+                        new User { UserName = "GülSevimBülbül", Name = "Gül Sevim Bülbül", Email = "info@gulsevimblbl.com", Password = "123456", Image = "p1.jpg" },
+                        new User { UserName = "AhmetYilmaz", Name = "Ahmet Yılmaz", Email = "info@ahmetyilmaz.com", Password = "123456", Image = "p4.jpg" },
+
+                        new User { UserName = "handeSonmez",Name="Hande Sonmez",Email="info@handesonmez.com",Password="123456" , Image = "p3.jpg" }
                     );
                     context.SaveChanges();
                 }
