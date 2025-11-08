@@ -1,4 +1,5 @@
 using System.IO.Compression;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BlogApp_AspNetCore.Data.Abstract;
 using BlogApp_AspNetCore.Data.Concreate.EfCore;
@@ -46,18 +47,19 @@ namespace BlogApp_AspNetCore.Controllers
         }
         //Yorum Ekleme İşlemi action metodu
         [HttpPost]
-        public JsonResult AddComment(int PostId, string UserName, string Text)
+        public JsonResult AddComment(int PostId, string Text)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var username = User.FindFirstValue(ClaimTypes.Name);
+            var avatar = User.FindFirstValue(ClaimTypes.UserData);
+
             var entity = new Comment
             {
+                PostId = PostId,
                 Text = Text,
                 PublishedOn = DateTime.Now,
-                PostId = PostId,
-                User = new User
-                {
-                    UserName = UserName,
-                    Image = "avatar.jpg"
-                }
+                UserId = int.Parse(userId ?? "")//giriş yapan kullanıcının id sini alıyoruz
+        
             };
             _commentRepository.CreateComment(entity);
             // return Redirect("/posts/details/" + Url);
@@ -65,10 +67,10 @@ namespace BlogApp_AspNetCore.Controllers
 
             return Json(new
             {
-                UserName,
+                username,
                 Text,
                 entity.PublishedOn,
-                entity.User.Image
+                avatar
             });
         }
     }

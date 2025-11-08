@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlogApp-AspNetCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bbff56f0d3526d81061e7508b9937dfd939bcd6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+408da3733696c04dc7f92519343e4328f311ba89")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlogApp-AspNetCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlogApp-AspNetCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
