@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using BlogApp_AspNetCore.Data.Abstract;
+using BlogApp_AspNetCore.Entity;
 using BlogApp_AspNetCore.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -20,11 +21,42 @@ namespace BlogApp_AspNetCore.Controllers
 
         public IActionResult Login()
         {
-            if(User.Identity!.IsAuthenticated)
+            if (User.Identity!.IsAuthenticated)
             {
-                return RedirectToAction("Index","Posts");
+                return RedirectToAction("Index", "Posts");
             }
             return View();
+        }
+        //kullanıcı kayıt sayfası
+        public IActionResult Register()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userRepository.Users.FirstOrDefaultAsync(u => u.UserName == model.UserName || u.Email == model.Email);
+                if (user == null)
+                {
+                    _userRepository.CreateUser(new User
+                    {
+                        UserName = model.UserName,
+                        Name = model.Name,
+                        Email = model.Email,
+                        Password = model.Password,
+                        Image = "avatar.jpg"
+                    });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Kullanıcı adı veya email zaten kayıtlı");
+                }
+            }
+            return View(model);
         }
 
         public async Task<IActionResult> Logout()
