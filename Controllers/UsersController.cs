@@ -18,51 +18,67 @@ namespace BlogApp_AspNetCore.Controllers
             _userRepository = userRepository;
         }
 
-        [AllowAnonymous]
-        public IActionResult Login() => View();
-
-        [HttpPost, AllowAnonymous, ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public IActionResult Login()
         {
-            if (!ModelState.IsValid) return View(model);
-
-            var user = await _userRepository.Users
-                .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
-
-            if (user == null)
+            if(User.Identity!.IsAuthenticated)
             {
-                ModelState.AddModelError("", "Kullanıcı adı veya şifre yanlış");
-                return View(model);
+                return RedirectToAction("Index","Posts");
             }
-
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
-                new Claim(ClaimTypes.GivenName, user.Name ?? string.Empty),
-                new Claim(ClaimTypes.Email, user.Email ?? string.Empty)
-            };
-            if (string.Equals(user.Email, "info@gulsevimblbl.com", StringComparison.OrdinalIgnoreCase))
-                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var authProps = new AuthenticationProperties { IsPersistent = true };
-
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(identity),
-                authProps);
-
-            return RedirectToAction("Index", "Posts");
+            return View();
         }
 
-        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction(nameof(Login));
+            return RedirectToAction("Login");
         }
+
+
+         [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if(ModelState.IsValid)  
+            {
+                var isUser = _userRepository.Users.FirstOrDefault(x => x.Email == model.Email && x.Password == model.Password);
+
+                if(isUser != null)
+                {
+                    var userClaims = new List<Claim>();
+
+                    userClaims.Add(new Claim(ClaimTypes.NameIdentifier, isUser.UserId.ToString()));
+                    userClaims.Add(new Claim(ClaimTypes.Name, isUser.UserName ?? ""));
+                    userClaims.Add(new Claim(ClaimTypes.GivenName, isUser.Name ?? ""));
+
+                    if(isUser.Email == "info@gulsevimblbl.com")
+                    {
+                        userClaims.Add(new Claim(ClaimTypes.Role, "admin"));
+                    } 
+
+                    var claimsIdentity = new ClaimsIdentity(userClaims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    var authProperties = new AuthenticationProperties 
+                    {
+                        IsPersistent = true
+                    };
+
+                    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity), 
+                        authProperties);
+
+                    return RedirectToAction("Index","Posts");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Kullanıcı adı veya şifre yanlış");
+                }
+            } 
+            
+            return View(model);
+        }
+       
+       
     }
 }
