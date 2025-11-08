@@ -23,6 +23,7 @@ namespace BlogApp_AspNetCore.Controllers
         //Taglere göre filtreleme yapalım
         public async Task<IActionResult> Index(string tag)
         {
+            var claims = User.Claims;
 
             var posts = _postRepository.Posts; //veritabanindaki postlari çekiyorum.
 

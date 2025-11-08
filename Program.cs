@@ -1,7 +1,10 @@
 using BlogApp_AspNetCore.Data.Abstract;
 using BlogApp_AspNetCore.Data.Concreate;
 using BlogApp_AspNetCore.Data.Concreate.EfCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +23,18 @@ builder.Services.AddDbContext<BlogContext>(options =>
 builder.Services.AddScoped<IPostRepository, EfPostRepository>();//yani  sanal versiyonunu verdiğim zaman sanala karşılık gerçek versiyonu bana gönder diyorum. AddScoped diyorum çünkü her istek için yeni bir instance oluşturulsun istiyorum.
 builder.Services.AddScoped<ITagRepository, EfTagRepository>();
 builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
+builder.Services.AddScoped<IUserRepository, EfUserRepository>();
+//sema aracılığıyla yetkilendirme işlemlerini yapabilirim.
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
 
 var app = builder.Build();
 
 app.UseStaticFiles();
+//sıralama önemlidir .UseAuthentication ve UseAuthorization middlewarelarını eklediğimizde bunlardan önce Routing'in yapılandırılması önemli.
+app.UseRouting();
+app.UseAuthentication(); 
+app.UseAuthorization(); //yetkilendirme middleware ini ekliyorum
 
 SeedData.TestVerileriniDoldur(app);
 
