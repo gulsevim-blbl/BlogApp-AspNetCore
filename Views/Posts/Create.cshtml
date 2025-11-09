@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="Content" class="form-label"></label>
-                <textarea asp-for="Content" class="form-control"/></textarea>
+                <textarea asp-for="Content" class="form-control"></textarea>
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
@@ -34,7 +34,7 @@
 
 @section Scripts {
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/8.1.2/tinymce.min.js" integrity="sha512-t6rAWTkTP6kPQfG/mJ6ZojKT7kyJxw6//GQrS2QhYZoGW6oMWSWm7v/ur+sxoHDq1WaZqlOiZwI0D0HU7lgoeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tiny.cloud/1/g9a5ywbw9bauoex184hqyqwlbm8vvj44iu91nhhv941zeel8/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#Content'

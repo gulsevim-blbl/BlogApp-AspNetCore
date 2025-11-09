@@ -1,11 +1,10 @@
-
-
 using System.ComponentModel.DataAnnotations;
 
 namespace BlogApp_AspNetCore.Models
 {
     public class PostCreateViewModel
     {
+        public int PostId { get; set; }
         [Required]
         [Display(Name = "Başlık")]
         public string? Title { get; set; }
@@ -21,5 +20,7 @@ namespace BlogApp_AspNetCore.Models
         [Required]
         [Display(Name = "Url")]
         public string? Url { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }
