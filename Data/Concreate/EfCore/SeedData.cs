@@ -42,6 +42,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                         new Post
                         {
                             Title = "Asp.Net.Core",
+                            Description = "Asp.net core dersleri",
                             Content = "Asp.net core dersleri",
                             Url = "asp-net-core",
                             IsActive = true,
@@ -55,7 +56,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                                 {
                                     Text = "Harika bir ders olmuş, teşekkürler!",
                                     PublishedOn = DateTime.Now.AddDays(-10),
-                                    UserId= 1 
+                                    UserId= 1
                                 },
                                 new Comment
                                 {
@@ -67,18 +68,20 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                         },
                          new Post
                          {
-                             Title = "React.js",
-                             Content = "React.js dersleri",
-                             Url = "react-js",
-                             IsActive = true,
-                             PublishedOn = DateTime.Now.AddDays(-1),
-                             Tags = context.Tags.Take(2).ToList(),
-                             Image = "2.jpg",
-                             UserId = 1
+                            Title = "React.js",
+                            Description = "React.js dersleri",
+                            Content = "React.js dersleri",
+                            Url = "react-js",
+                            IsActive = true,
+                            PublishedOn = DateTime.Now.AddDays(-1),
+                            Tags = context.Tags.Take(2).ToList(),
+                            Image = "2.jpg",
+                            UserId = 1
                          },
                          new Post
                          {
                              Title = "Node.js",
+                             Description = "Node.js dersleri",
                              Content = "Node.js dersleri",
                              Url = "node-js",
                              IsActive = true,
@@ -90,6 +93,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                         new Post
                         {
                             Title = "PHP",
+                            Description = "PHP dersleri",
                             Content = "PHP dersleri",
                             Url = "php",
                             IsActive = true,
@@ -101,6 +105,7 @@ namespace BlogApp_AspNetCore.Data.Concreate.EfCore
                         new Post
                         {
                             Title = "Kubernetes",
+                            Description = "Kubernetes dersleri",
                             Content = "Kubernetes dersleri",
                             Url = "Kubernetes",
                             IsActive = true,

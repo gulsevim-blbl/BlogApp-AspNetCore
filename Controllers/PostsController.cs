@@ -59,7 +59,7 @@ namespace BlogApp_AspNetCore.Controllers
                 Text = Text,
                 PublishedOn = DateTime.Now,
                 UserId = int.Parse(userId ?? "")//giriş yapan kullanıcının id sini alıyoruz
-        
+
             };
             _commentRepository.CreateComment(entity);
             // return Redirect("/posts/details/" + Url);
@@ -73,5 +73,34 @@ namespace BlogApp_AspNetCore.Controllers
                 avatar
             });
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }   
+
+         [HttpPost]
+        public IActionResult Create(PostCreateViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                _postRepository.CreatePost(
+                    new Post {
+                        Title = model.Title,
+                        Content = model.Content,
+                        Url = model.Url,
+                        UserId = int.Parse(userId ?? ""),
+                        PublishedOn = DateTime.Now,
+                        Image = "1.jpg",
+                        IsActive = false
+                    }
+                );
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }       
+
     }
 }
