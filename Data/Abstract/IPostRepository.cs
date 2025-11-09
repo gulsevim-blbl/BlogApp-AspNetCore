@@ -11,7 +11,7 @@ namespace BlogApp_AspNetCore.Data.Abstract
         //Peki neden query türü tanımlıyoruz bu listenin bir versiyonu tabii ki IQueryable olması demek.Ben context üzerinden bütün post'ları aldığım zaman ekstra filtrelemeye devam edebileceğim.Bunu yaptığınızda aslında query tamamlanmış bir query ve üzerine ekstra kriterler ekleyebileceksiniz.Eğer iEnumerable yazmış olsanız bütün postları alıp bu şekilde geri gönderip ekstra filtreleme yapabilirsiniz.Ancak veritabanından tüm postları alıp daha sonra filtreleme yapmak ne kadar mantıklı?
 
         void CreatePost(Post post);
-        void EditPost(Post post);
+        void EditPost(Post post, int[] tagIds);
     
     }
     

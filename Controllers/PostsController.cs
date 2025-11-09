@@ -153,11 +153,12 @@ namespace BlogApp_AspNetCore.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Edit(PostCreateViewModel model)
+        public IActionResult Edit(PostCreateViewModel model, int[] tagIds)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var entityToUpdate = new Post {
+                var entityToUpdate = new Post
+                {
                     PostId = model.PostId,
                     Title = model.Title,
                     Description = model.Description,
@@ -165,14 +166,15 @@ namespace BlogApp_AspNetCore.Controllers
                     Url = model.Url
                 };
 
-                if(User.FindFirstValue(ClaimTypes.Role) == "admin") 
+                if (User.FindFirstValue(ClaimTypes.Role) == "admin")
                 {
                     entityToUpdate.IsActive = model.IsActive;
                 }
 
-                _postRepository.EditPost(entityToUpdate);
+                _postRepository.EditPost(entityToUpdate, tagIds);
                 return RedirectToAction("List");
             }
+            ViewBag.Tags = _tagRepository.Tags.ToList();
             return View(model);
         }
 
