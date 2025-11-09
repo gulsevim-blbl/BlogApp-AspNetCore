@@ -41,9 +41,10 @@ namespace BlogApp_AspNetCore.Controllers
         {
             return View(await _postRepository
                             .Posts
+                            .Include(x => x.User) //postun yazarını da dahil et
                             .Include(x => x.Tags)
                             .Include(x => x.Comments)
-                            .ThenInclude(x => x.User) //yorum yapan kullanıcıyı da dahil et
+                            .ThenInclude(x => x.User) //comments in içinden usera erişiyoruz yorum yapan kullanıcıyı da dahil et
                             .FirstOrDefaultAsync(p => p.Url == url)); //dışarıdan id alıp o id ye sahip postu getiriyoruz
         }
         //Yorum Ekleme İşlemi action metodu
